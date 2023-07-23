@@ -10,7 +10,9 @@ pipeline {
             steps {
                 echo "Build stage."
 		withCredentials([file(credentialsId: 'k3s-user', variable: 'KUBECONFIG')]) {
-			sh "kubectl  get no" 
+			sh "kubectl  apply -k deployments/mysql" 
+                        sh "kubectl  apply -k deployments/anakonda" 
+
 		}
             }
         }
