@@ -22,7 +22,6 @@ pipeline {
       			if ("$params.ENV" == "deployment") {
 				sh "sed -i \"s#IMAGE_NAME#${IMAGE_NAME}#g\" dev/kustomization.yml
                                 sh "sed -i \"s#IMAGE_TAG#${IMAGE_TAG}#g\" dev/kustomization.yml
-
 				sh "kubectl  apply -k dev" 
 			}
 		}
