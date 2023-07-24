@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    patameters{
+	string(name: "PROJECT" ,trim: true, description: "P roject name")
+        string(name: "ENV" ,defaultValue: "", trim: true, description: "Environment name")
+        string(name: "IMAGE" ,trim: true, description: "Image repository")
+        string(name: "NAMESPACE" ,trim: true, description: "Kubertenese target namespace")
+
+    }
     stages {
         stage("Prepare") {
             steps {
