@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    patameters{
+    parameters{
 	string(name: "PROJECT" ,trim: true, description: "P roject name")
         string(name: "ENV" ,defaultValue: "", trim: true, description: "Environment name")
         string(name: "IMAGE" ,trim: true, description: "Image repository")
